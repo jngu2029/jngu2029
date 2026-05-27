@@ -55,3 +55,13 @@ body {
     line-height: 1.5;
     margin: 20px;
 }
+
+@media (min-width: 540px) {
+    .cards-row {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .me_card, skills_card {
+        flex: 1;
+    }
+}
