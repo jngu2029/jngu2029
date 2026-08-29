@@ -1,2 +1,2 @@
 # John Nguyen
-Here are some personal projects that I created
+Hello! Here are some things I'm working on
