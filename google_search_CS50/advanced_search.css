@@ -1,0 +1,143 @@
+.google {
+    font-family: "Roboto",Arial, sans-serif;
+    font-size: 0px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding: 30px 50px 35px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.google span {
+    font-size: 30px;
+}
+#g {
+    color: #4285F4;
+}
+#o1 {
+    color: #EA4335;
+}
+#o2 {
+    color: #FBBC05;
+}
+#g2 {
+    color: #4285F4;
+}
+#l {
+    color: #34A853;
+}
+#e {
+    color: #EA4335;
+}
+
+.other-searches {
+    padding: 20px 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.content {
+    padding-top: 5px;
+    margin-left: 50px;
+}
+
+.content h1 {
+    font-weight: normal;
+    font-size: 28px;
+    padding-bottom: 20px;
+}
+
+.content h2 {
+    font-weight: normal;
+    font-size: 22px;
+    padding-bottom: 0px;
+}
+
+.search-inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+#narrow-heading {
+    margin-top: 5px;
+    margin-bottom: -15px;
+}
+
+.search-inputs h2 {
+    margin: 20px 0px 0;
+}
+
+
+.input-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.label {
+    font-size: 14px;
+    width: 130px;
+}
+
+.input-field {
+    width: min(340px, 80vw);
+    height: 50px;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #363636;
+}
+
+.submit-container {
+    width: 485px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -15px;
+}
+
+#submit-button {
+    width: min(145px, 80vw);
+    height: 45px;
+    background-color: #0155dd;
+    color: white;
+    font-size: 14px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-bottom: 35px;
+}
+
+@media (max-width: 700px) {
+    .content {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .input-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .label {
+        width: auto;
+    }
+
+    .input-field {
+        width: 100%;
+    }
+
+    .submit-container {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
