@@ -1,0 +1,74 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <!--title and picture-->
+    <div class="listing-header">
+        <h1>{{ listing.title }}</h1>
+
+        {% if listing.picture %}
+            <img src="{{ listing.picture }}" alt="{{ listing.title }}" width="400">
+        {% endif %}
+    </div>
+    <br>
+
+    <!--description and price of current bid-->
+    <div class="large-description">
+        <p>{{ listing.description }}</p>
+    </div>
+    <div class="large-bid">
+        <p><b>Current Bid:</b> ${{ listing.price }}</p>
+    </div>
+
+    <!--add/remove listing to watchlist-->
+    {% if user.is_authenticated %}
+        {% if is_watching %}
+            <form action="{% url 'watchlist' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="listing_id" value="{{ listing.id }}">
+                <input type="hidden" name="action" value="remove">
+
+                <div class="watchlist-button">
+                    <button id="remove-watchlist" type="submit">Remove from Watchlist</button>
+                </div>
+            </form>
+            <br>
+        {% else %}
+            <form action="{% url 'watchlist' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="listing_id" value="{{ listing.id }}">
+                <input type="hidden" name="action" value="add">
+
+                <div class="watchlist-button">
+                    <button id="add-watchlist" type="submit">Add to Watchlist</button>
+                </div>
+            </form>
+            <br>
+        {% endif %}
+    {% endif %}
+
+    <!--allow user to place new bid-->
+    <form action="{% url 'listing' listing.id %}" method="POST">
+        {% csrf_token %}
+        <input
+            type="text"
+            name="bid"
+            min="{{ bid_min }}"
+            step="0.01"
+            placeholder="{{ bid_min }}"
+            required
+        >
+        <div class="submit-button">
+            <button id="bid" type="submit">Place Bid</button>
+        </div>
+    </form>
+    <br>
+
+    <!--who owns listing and when listing was posted-->
+    <div class="owner">
+        <p>Listed by: {{ listing.owner }}</p>
+    </div>
+    <div class="createdAt">
+        <p>Listing created at: {{ listing.created_at }}</p>
+    </div>
+{% endblock %}
