@@ -51,7 +51,7 @@
     <form action="{% url 'listing' listing.id %}" method="POST">
         {% csrf_token %}
         <input
-            type="text"
+            type="number"
             name="bid"
             min="{{ bid_min }}"
             step="0.01"

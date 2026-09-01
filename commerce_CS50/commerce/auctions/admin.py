@@ -9,7 +9,10 @@ class UserAdmin(admin.ModelAdmin):
 class ListingAdmin(admin.ModelAdmin):
     list_display = ("id", "title", "price")
 
+class BidAdmin(admin.ModelAdmin):
+    list_display = ("id", "listing", "bidder", "amount")
+    
 admin.site.register(User, UserAdmin)
 admin.site.register(Listing, ListingAdmin)
-admin.site.register(Bid)
+admin.site.register(Bid, BidAdmin)
 admin.site.register(Comment)

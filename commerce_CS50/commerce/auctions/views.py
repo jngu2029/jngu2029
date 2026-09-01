@@ -120,3 +120,13 @@ def watchlist(request):
     return render(request, "auctions/watchlist.html", {
         "listings": request.user.watchlist.all(),
     })
+
+@login_required(login_url="login")
+def bid(request):
+    if request.method == "POST":
+        pass
+        # get user input from post
+        # if user input > listing.price:
+            # add bid to database
+            # update listing.price value
+            # add bid to users' bid page
