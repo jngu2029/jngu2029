@@ -31,6 +31,7 @@ class Listing(models.Model):
 
 class Bid(models.Model):
     amount = models.DecimalField(max_digits=7, decimal_places=2)
+    is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     #receiving the bid
     listing = models.ForeignKey(

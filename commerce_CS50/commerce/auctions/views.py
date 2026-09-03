@@ -130,3 +130,8 @@ def bid(request):
             # add bid to database
             # update listing.price value
             # add bid to users' bid page
+            # set bid as active
+            # set old bid as inactive
+    # redirect to bid page
+    # show user's bids placed 
+        
